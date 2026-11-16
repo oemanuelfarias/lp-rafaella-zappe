@@ -601,7 +601,7 @@ a {
 
 .resultados-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
 }
 
@@ -735,6 +735,26 @@ a {
 
 .depoimento-card footer strong {
     color: var(--primary-dark);
+}
+
+.depoimento-video {
+    margin: 0 auto 2.5rem;
+    max-width: 360px;
+    text-align: center;
+}
+
+.depoimento-video video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    background: #000;
+    box-shadow: var(--shadow-soft);
+}
+
+.depoimento-video figcaption {
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
 }
 
 @media (max-width: 968px) {
