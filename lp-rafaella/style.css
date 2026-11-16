@@ -527,9 +527,19 @@ a {
 }
 
 .bento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
+}
+
+.bento-grid > .service-card {
+    flex: 0 1 calc((100% - 4.5rem) / 4);
+    min-width: 260px;
+}
+
+@media (max-width: 640px) {
+    .bento-grid > .service-card { flex-basis: 100%; min-width: 0; }
 }
 
 .service-card {
@@ -626,6 +636,48 @@ a {
     font-weight: 600;
     color: var(--primary-dark);
     border-top: 3px solid var(--primary);
+}
+
+.resultado-card img { cursor: zoom-in; }
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(10, 20, 18, 0.96);
+    cursor: zoom-out;
+}
+
+.lightbox.aberta { display: flex; }
+
+.lightbox figure { margin: 0; text-align: center; }
+
+.lightbox img {
+    max-width: min(92vw, 900px);
+    max-height: 82vh;
+    border-radius: 10px;
+}
+
+.lightbox figcaption {
+    margin-top: 0.8rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.lightbox-fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
 }
 
 .resultados-nota {
