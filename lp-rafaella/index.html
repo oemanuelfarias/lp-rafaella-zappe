@@ -41,9 +41,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="video-background">
-            <video autoplay muted loop playsinline poster="/.netlify/images?url=/lp-rafaella/assets/capavideohero.jpg&w=1920&q=80">
-                <source src="assets/video_hero.mov" type="video/quicktime">
-                <source src="assets/video_hero.mov" type="video/mp4">
+            <video autoplay muted loop playsinline poster="assets/videos/atendendo-fundo.jpg">
+                <source src="assets/videos/atendendo-fundo.mp4" type="video/mp4">
             </video>
             <div class="overlay"></div>
         </div>
@@ -57,9 +56,8 @@
 
                     <div class="hero-video-player">
                         <div class="video-wrapper glass-frame">
-                            <video controls poster="/.netlify/images?url=/lp-rafaella/assets/capavideohero.jpg&w=1000&q=80">
-                                <source src="assets/video_hero.mov" type="video/quicktime">
-                                <source src="assets/video_hero.mov" type="video/mp4">
+                            <video controls playsinline preload="none" poster="/.netlify/images?url=/lp-rafaella/assets/capavideohero.jpg&w=1000&q=80">
+                                <source src="assets/videos/apresentacao.mp4" type="video/mp4">
                                 Seu navegador não suporta vídeo HTML5.
                             </video>
                         </div>
@@ -193,6 +191,14 @@
 
             <div class="resultados-grid">
                 <figure class="resultado-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/antes-depois/ortodontia-1.webp" alt="Antes e depois de tratamento ortodôntico, sorriso com os dentes alinhados" loading="lazy" width="900" height="900">
+                    <figcaption>Ortodontia</figcaption>
+                </figure>
+                <figure class="resultado-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="assets/antes-depois/ortodontia-2.webp" alt="Antes e depois de tratamento ortodôntico iniciado na infância" loading="lazy" width="900" height="900">
+                    <figcaption>Ortodontia</figcaption>
+                </figure>
+                <figure class="resultado-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="assets/antes-depois/botox-1.webp" alt="Antes e depois de aplicação de toxina botulínica na testa" loading="lazy" width="900" height="900">
                     <figcaption>Toxina botulínica</figcaption>
                 </figure>
@@ -226,6 +232,27 @@
                 </figure>
             </div>
 
+            <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+                <button type="button" class="lightbox-fechar" aria-label="Fechar">&times;</button>
+                <figure><img alt=""><figcaption></figcaption></figure>
+            </div>
+            <script>
+            (function () {
+                var lb = document.getElementById('lightbox');
+                var img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+                function fechar() { lb.classList.remove('aberta'); document.body.style.overflow = ''; }
+                document.querySelectorAll('.resultado-card img').forEach(function (el) {
+                    el.addEventListener('click', function () {
+                        img.src = el.currentSrc || el.src; img.alt = el.alt;
+                        cap.textContent = el.closest('figure').querySelector('figcaption').textContent;
+                        lb.classList.add('aberta'); document.body.style.overflow = 'hidden';
+                    });
+                });
+                lb.addEventListener('click', fechar);
+                document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+            })();
+            </script>
+
             <p class="resultados-nota">Imagens publicadas com autorização dos pacientes. O resultado varia de pessoa para pessoa e depende da avaliação individual.</p>
         </div>
     </section>
@@ -236,6 +263,12 @@
             <div class="section-header text-center" data-aos="fade-up">
                 <h2>O que dizem os <span class="italic-serif">pacientes</span></h2>
             </div>
+            <figure class="depoimento-video" data-aos="fade-up">
+                <video controls playsinline preload="none" poster="assets/videos/paciente-rinomodelacao.jpg">
+                    <source src="assets/videos/paciente-rinomodelacao.mp4" type="video/mp4">
+                </video>
+                <figcaption>A paciente vê no espelho o resultado da rinomodelação.</figcaption>
+            </figure>
             <div class="depoimentos-grid">
                 <blockquote class="depoimento-card" data-aos="fade-up" data-aos-delay="100">
                     <p>“Perdi o medo de dentista. Fui muito bem atendida!”</p>
@@ -472,7 +505,7 @@
                         Segunda a sexta, 8h30 às 18h30<br>Sábado, 8h30 às 12h
                     </p>
                     <p style="margin-bottom: 0;">
-                        <a href="tel:+5555999156225" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4);">(55) 99915-6225</a>
+                        <a href="tel:+5555999156225" style="display: inline-block; padding: 10px 0; color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4);">(55) 99915-6225</a>
                     </p>
                 </div>
 
