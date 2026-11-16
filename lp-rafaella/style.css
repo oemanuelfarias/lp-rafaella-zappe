@@ -587,6 +587,160 @@ a {
     color: var(--text);
 }
 
+/* SECTION 3b: ANTES E DEPOIS */
+.resultados {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--white);
+}
+
+.resultados .subtitle {
+    margin-top: 1rem;
+    color: var(--text-light);
+    text-wrap: balance;
+}
+
+.resultados-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.resultado-card {
+    margin: 0;
+    background: var(--white);
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.resultado-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.resultado-card figcaption {
+    padding: 0.9rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-dark);
+    border-top: 3px solid var(--primary);
+}
+
+.resultados-nota {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+@media (max-width: 968px) {
+    .resultados-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .resultados-grid { gap: 0.75rem; }
+    .resultado-card figcaption { padding: 0.7rem 0.5rem; font-size: 0.9rem; }
+}
+
+/* FORMAÇÃO (Sobre) */
+.formacao {
+    text-align: left;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--light);
+    border-radius: 12px;
+}
+
+.formacao h3 {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.formacao h3 span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.formacao ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.formacao li {
+    color: var(--text);
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.formacao li strong {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* Descrição nos cards de tratamento */
+.service-card p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* DEPOIMENTOS */
+.depoimentos {
+    padding: var(--spacing-xl) 0;
+    background-color: #F9FAF9;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.depoimento-card {
+    margin: 0;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.depoimento-card p {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.depoimento-card footer {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.depoimento-card footer strong {
+    color: var(--primary-dark);
+}
+
+@media (max-width: 968px) {
+    .depoimentos-grid { grid-template-columns: 1fr; }
+}
+
 /* SECTION 4: DIFERENCIAIS (Sticky) */
 .diferenciais {
     padding: var(--spacing-xl) 0;

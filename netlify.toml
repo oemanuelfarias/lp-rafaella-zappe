@@ -58,3 +58,36 @@
   for = "*.svg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Arquivos internos (notas, backups) nao sao publicos. Lista explicita:
+# "/:x.md" vira placeholder de segmento inteiro e derruba o site todo.
+[[redirects]]
+  from = "/ajustes.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/_index_template.html"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/lp-rafaella/copy.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/lp-rafaella/layout.md"
+  to = "/404"
+  status = 404
+  force = true
+
