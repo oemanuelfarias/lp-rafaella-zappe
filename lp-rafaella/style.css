@@ -789,9 +789,18 @@ a {
     color: var(--primary-dark);
 }
 
+.depoimento-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
 .depoimento-video {
-    margin: 0 auto 2.5rem;
-    max-width: 360px;
+    margin: 0;
+    flex: 0 1 320px;
+    max-width: 320px;
     text-align: center;
 }
 
